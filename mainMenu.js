@@ -208,9 +208,8 @@ class gameSelectScreen{
   draw(){
     this.joinGameButton.update()
     this.backButton.update()
-    drawButton(this.joinGameButton,"Join Game")
+    drawButton(this.joinGameButton,"New Game")
     drawButton(this.backButton,"Back")
-    image(controlsThing,0,height/2,200,100)
   }
 }
 class achivementScreen{

@@ -8,7 +8,7 @@ let gravity = 1;
 let myPunch={x:0,y:0,cooldown:0}
 let plx = 0;
 let gameSize={w:15*40,h:10*40}
-let gamemode={online:true,racing:false}
+let gamemode={online:false,racing:false}
 let ply = 0;
 let player;
 let EVERYONEFREEZE=false;

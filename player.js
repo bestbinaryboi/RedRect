@@ -97,7 +97,7 @@ class Player {
                 let tarW = Classes[i].collideData.width / 2
                 let tarH = Classes[i].collideData.height / 2
                 if (Math.abs(px - x) < (tarW * sizeScale) + (w / 2) && Math.abs(py - y) < (tarH * sizeScale) + (h / 2)) {
-                    output4.push(Classes[i].collideData.collideID)
+                    output4.push(Classes[i])
             }
             }
             else {
@@ -225,8 +225,21 @@ class Player {
             }
         let frameCheck = frameCount
         let stuffTouched=this.checkColl(this.px, this.py)
+        const lastBoxesTouched=this.triggerBoxesTouched
         this.triggerBoxesTouched=stuffTouched.triggerBoxes
-        let thingsTouched = this.checkColl(this.px, this.py).Other
+        const set1=new Set(lastBoxesTouched)
+        const set2=new Set(this.triggerBoxesTouched)
+        lastBoxesTouched.forEach(obj => {
+            if(!set2.has(obj)){
+                obj.EndTouch()
+            }
+        })
+        this.triggerBoxesTouched.forEach(obj => {
+            if(!set1.has(obj)){
+                obj.StartTouch()
+            }
+        })
+        let thingsTouched = stuffTouched.Other
         if (thingsTouched.includes("End") && gamemode.online) {
             sendEndMessage()
         }

@@ -58,6 +58,9 @@ function loadLevelPart(levelPart,indexOfPartLoaded){
         else if(layers["Objects"][i].__identifier=="StartScript"){
             eval(layers["Objects"][i].fieldInstances[0].__value)
         }
+        else if(layers["Objects"][i].__identifier=="Script"){
+            eval(layers["Objects"][i].fieldInstances[0].__value)
+        }
         else if(layers["Objects"][i].__identifier=="TriggerBox"){
             newClasses.push(new TriggerBox(layers["Objects"][i].px[0],layers["Objects"][i].px[1],layers["Objects"][i].width,layers["Objects"][i].height,layers["Objects"][i].fieldInstances[0].__value))
         }

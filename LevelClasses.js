@@ -4,20 +4,27 @@ let sprites={}
 //     constructor(position)
 // }
 class TriggerBox{
-    constructor(myX,myY,myW,myH,scriptLink){
+    constructor(myX,myY,myW,myH,startTouchScript,endTouchScript,desc){
         this.position={}
-        console.log("trigger box made with ID:"+scriptLink)
+        console.log("trigger box made: "+desc)
         this.x=myX+myW
         this.y=myY+myH
         this.width=myW
         this.height=myH
-        this.collideData={width:myW,height:myH,trigger:"Custom",collideID:scriptLink}
+        this.collideData={width:myW,height:myH,trigger:"Custom"}
+        this.eventScripts={start:startTouchScript,end:endTouchScript}
     }
     display(){
         game.push()
             game.rectMode(CENTER)
                 game.rect(this.x*sizeScale,this.y*sizeScale,this.width*sizeScale,this.height*sizeScale)
         game.pop()
+    }
+    StartTouch(){
+        eval(this.eventScripts.start)
+    }
+    EndTouch(){
+        eval(this.eventScripts.end)
     }
 }
 class Bug {
@@ -122,3 +129,4 @@ class LittleDude extends BaseObject{
     }
 }
 ObjectBases.push(Bug)
+ObjectBases.push(TriggerBox)

@@ -16,8 +16,8 @@ class TriggerBox{
     }
     display(){
         game.push()
-            game.rectMode(CORNER)
-                game.rect(this.x*sizeScale,this.y*sizeScale,this.width*sizeScale,this.height*sizeScale)
+            game.rectMode(CENTER)
+            game.rect(this.x*sizeScale*(tileSize/32),this.y*sizeScale*(tileSize/32),this.width*sizeScale*(tileSize/32),this.height*sizeScale*(tileSize/32))
         game.pop()
     }
     StartTouch(){

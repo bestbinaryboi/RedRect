@@ -16,7 +16,7 @@ class TriggerBox{
     }
     display(){
         game.push()
-            game.rectMode(CENTER)
+            game.rectMode(CORNER)
                 game.rect(this.x*sizeScale,this.y*sizeScale,this.width*sizeScale,this.height*sizeScale)
         game.pop()
     }

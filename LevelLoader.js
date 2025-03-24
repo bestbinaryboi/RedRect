@@ -62,7 +62,7 @@ function loadLevelPart(levelPart,indexOfPartLoaded){
             eval(layers["Objects"][i].fieldInstances[0].__value)
         }
         else if(layers["Objects"][i].__identifier=="TriggerBox"){
-            newClasses.push(new TriggerBox(layers["Objects"][i].px[0],layers["Objects"][i].px[1],layers["Objects"][i].width,layers["Objects"][i].height,layers["Objects"][i].fieldInstances[0].__value))
+            newClasses.push(new TriggerBox(layers["Objects"][i].px[0],layers["Objects"][i].px[1],layers["Objects"][i].width,layers["Objects"][i].height,layers["Objects"][i].fieldInstances[0].__value,layers["Objects"][i].fieldInstances[1].__value,layers["Objects"][i].fieldInstances[2].__value))
         }
         else{
             for (let o=0;o<ObjectBases.length;o++){

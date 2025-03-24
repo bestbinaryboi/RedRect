@@ -6,7 +6,7 @@ let config = {
 
      
      //Good Luck! -jahames
-     levelToLoad: "levels/Sigma.json"
+     levelToLoad: "levels/triggerTest2.json"
      ,
      ShowFps: true
      ,
